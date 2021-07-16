@@ -14,7 +14,7 @@ k8s cluster is installed using vagrant
 - spins up 3 k8s worker nodes (kworker) requiring 4 GB RAM each
 - k8s master and workers share a private net 172.42.42.100/24
 - k8s master uses 172.42.42.100, while workers use 172.42.42.101 incrementing by 1 for each additional worker added
-- k8s cluster is NAT'ed
+- k8s cluster is bridged using a bridge interface from kmaster
 - OpenEBS script needs to be added separately on kmaster
 - Portainer script needs to be added separately on kmaster
 - Portainer port is forwarded using  virtualbox port forwarding as a convenience to permit remote management of the cluster
@@ -55,6 +55,7 @@ In Portainer, in the 'Cluster==>Setup (Endpoints>Local>Kubernetes configuration)
 4. save Configuration'
 
 ## Ingress
+The standard coffee and tea services for cafe.example.com from Nginx have been installed by the last installation script and now we want to enable access via the ingress.
 One additional step is required to make the ingress available via the load balancer.  Using your local subnet DNS (I use Pihole), add a Local DNS entry for 'cafe.example.com' and set it to use the IP address for eth1
 Once the Local DNS entry is in pihole, you can now access the installed coffee and tea services using https://cafe.example.com/coffee and https://cafe.example.com/tea.
 
@@ -68,4 +69,5 @@ Request ID: 5f5f26974434b9b5243c540e9bc14636'
 
 ## References:
 - See https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant/
-- Forked from https://exxsyseng@bitbucket.org/exxsyseng/k8s_ubuntu.git
+- Forked from https://exxsyseng@bitbucket.org/exxsyseng/k8s_ubuntu.git and https://github.com/Innablr/k8s_ubuntu
+- See https://docs.nginx.com/nginx-ingress-controller/configuration/virtualserver-and-virtualserverroute-resources/
