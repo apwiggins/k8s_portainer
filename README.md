@@ -1,6 +1,6 @@
 # Easy k8s cluster with Portainer
 
-Quickly set up a Kubernetes cluster on virtualbox and manage with Portainer. Requires 16GB of RAM
+Quickly set up a Kubernetes cluster on virtualbox and manage with Portainer. Requires 16GB of RAM, but can be reduced by adjusting in Vagrantfile
 ## Portainer
 Portainer cluster explorer and cluster dashboard can be used to externally manage the cluster.  Ideal for lab or home use.
 - Portainer is accessible remotely, permitting remote management of the k8s cluster
@@ -10,7 +10,7 @@ Portainer cluster explorer and cluster dashboard can be used to externally manag
 ## Vagrant
 k8s cluster is installed using vagrant
 - uses virtualbox to create 4 VMs; adjust Vagrantfile to add additional workers
-- spins up a k8s master node (kmaster) requiring 4 GB RAM
+- spins up a k8s master node (kmaster) requiring 4 GB RAM; adjust Vagrantfile to reduce RAM
 - spins up 3 k8s worker nodes (kworker) requiring 4 GB RAM each
 - k8s master and workers share a private net 172.42.42.100/24
 - k8s master uses 172.42.42.100, while workers use 172.42.42.101 incrementing by 1 for each additional worker added
