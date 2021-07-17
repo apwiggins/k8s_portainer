@@ -71,3 +71,4 @@ Request ID: 5f5f26974434b9b5243c540e9bc14636'
 - See https://blog.exxactcorp.com/building-a-kubernetes-cluster-using-vagrant/
 - Forked from https://exxsyseng@bitbucket.org/exxsyseng/k8s_ubuntu.git and https://github.com/Innablr/k8s_ubuntu
 - See https://docs.nginx.com/nginx-ingress-controller/configuration/virtualserver-and-virtualserverroute-resources/
+- See https://github.com/nginxinc/kubernetes-ingress/tree/v1.11.3/examples/complete-example
