@@ -25,7 +25,7 @@ k8s cluster is installed using vagrant
 3.	`cp bootstrap_kmaster_flannel.sh bootstrap_kmaster.sh # optional to use flannel`
 4.	`vagrant up`
 5.	`vagrant ssh kmaster -c 'kubectl get nodes -o wide'
-6. Wait about 5 minutes to permit Rancher to spin up
+6. Wait about 5 minutes to permit VMs to spin up
 7. 'vagrant ssh kmaster'
 
 ## Adjust IP Addresses for Load Balancer
@@ -41,7 +41,9 @@ Use your editor to adjust metallb.yaml:
        addresses:
        - 192.168.1.226/30' <== add the eth1 ip address here
 
-8. Execute 5 scripts to install OpenEBS storage, Portainer, MetalLB, Nginx ingress, and cafe example
+## Install OpenEBS, Portainer, MetalLB, Nginx Ingress, and Cafe example
+[on kmaster] 
+From the home folder, execute 5 scripts to install OpenEBS storage, Portainer, MetalLB, Nginx ingress, and cafe example.  Scripts were copied over to kmaster during the installation and should be run one at a time.  Each script has a sequence number since their order does matter.  At the end, the cluster will be available with distributed storage, Portainer, a load balancer, a functional ingress and a working web service example (nginx's cafe services)
 
 ## Portainer
 From an external browser on a remote machine, https://[VirtualBox host IP]:30777 via the forwarded port on eth1 which should be on your local physical network
