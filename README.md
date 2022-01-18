@@ -25,7 +25,7 @@ k8s cluster is installed using vagrant
 3.	`cp bootstrap_kmaster_flannel.sh bootstrap_kmaster.sh # optional to use flannel`
 4.	`vagrant up`
 5.	`vagrant ssh kmaster -c 'kubectl get nodes -o wide'
-6. Wait about 5 minutes to permit VMs to spin up
+6. Wait about 5 minutes to permit VMs to spin up and the k8s cluster to organize itself
 7. 'vagrant ssh kmaster'
 
 ## Adjust IP Addresses for Load Balancer
